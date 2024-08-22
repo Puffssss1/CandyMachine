@@ -85,8 +85,8 @@ async function main() {
 
     // 1. Airdrop 100 SOL to the keypair
     try {
-        await umi.rpc.airdrop(keypair.publicKey, sol(100), options.confirm);
-        console.log(`1. ✅ - Airdropped 100 SOL to the ${keypair.publicKey.toString()}`)
+        await umi.rpc.airdrop(keypair.publicKey, sol(5), options.confirm);
+        console.log(`1. ✅ - Airdropped 5 SOL to the ${keypair.publicKey.toString()}`)
     } catch (error) {
         console.error('1. ❌ - Error airdropping SOL to the wallet:', error);
     }
@@ -96,7 +96,7 @@ async function main() {
         await createCollectionV1(umi, {
             collection: collectionMint,
             name: 'My Collection',
-            uri: 'https://example.com/my-collection.json',
+            uri: 'https://arweave.net/zgFQx7sWurSZnvQHLo08Krv7HISRLZA77yeYeU1-uHk',
         }).sendAndConfirm(umi, options);
         console.log(`2. ✅ - Created collection: ${collectionMint.publicKey.toString()}`)
     } catch (error) {
@@ -116,7 +116,7 @@ async function main() {
                 prefixName: 'Quick NFT #',
                 nameLength: 11,
                 prefixUri: 'https://example.com/metadata/',
-                uriLength: 29,
+                uriLength: 65,
                 isSequential: false,
             }),
             guards: {
@@ -138,9 +138,9 @@ async function main() {
             candyMachine: candyMachine.publicKey,
             index: 0,
             configLines: [
-                { name: '1', uri: '1.json' },
-                { name: '2', uri: '2.json' },
-                { name: '3', uri: '3.json' },
+                { name: '1', uri: 'https://arweave.net/gR62qxGsChALVAMdnyoq0KZzsSnN4VxYvx0ramlaJnY' },
+                { name: '2', uri: 'https://arweave.net/Ya_V3r3k_c-BivoJiMUfO8vEpsi95c5dupYIh2cFdGo' },
+                { name: '3', uri: 'https://arweave.net/8MPJnyFK0eBvYEKRgA6mxCBbGGEHIRXjC74Jl06ymDg' },
             ],
         }).sendAndConfirm(umi, options);
         console.log(`4. ✅ - Added items to the Candy Machine: ${candyMachine.publicKey.toString()}`)
