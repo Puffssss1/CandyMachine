@@ -189,15 +189,15 @@ async function main() {
         itemsRedeemed: 3,
     }, 7);
 
-    // 8. Delete the Candy Machine
-    try {
-        await deleteCandyMachine(umi, {
-            candyMachine: candyMachine.publicKey,
-        }).sendAndConfirm(umi, options);
-        console.log(`8. ✅ - Deleted the Candy Machine: ${candyMachine.publicKey.toString()}`);
-    } catch (error) {
-        console.error('8. ❌ - Error deleting the Candy Machine:', error);
-    }
+    // // 8. Delete the Candy Machine
+    // try {
+    //     await deleteCandyMachine(umi, {
+    //         candyMachine: candyMachine.publicKey,
+    //     }).sendAndConfirm(umi, options);
+    //     console.log(`8. ✅ - Deleted the Candy Machine: ${candyMachine.publicKey.toString()}`);
+    // } catch (error) {
+    //     console.error('8. ❌ - Error deleting the Candy Machine:', error);
+    // }
 
 }
 main().catch(console.error);
